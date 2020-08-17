@@ -14,10 +14,10 @@
     "name": "EclipseSource"
   },
   "dependencies": {
-    "@eclipse-glsp-examples/workflow-sprotty": "../client/workflow/workflow-sprotty",
-    "@eclipse-glsp/client": "C:/Users/Public/eclipse-glsp/glsp-client",
-    "@eclipse-glsp/theia-integration": "C:/Users/Public/eclipse-glsp/glsp-theia-integration",
-    "@glsp/theia-debug-diagram": "C:/Users/Public/eclipse-glsp/theia-debug-glsp-diagram",
+    "@eclipse-glsp-examples/workflow-sprotty": "0.7.0",
+    "@eclipse-glsp/client": "0.7.1",
+    "@eclipse-glsp/theia-integration": "0.7.0",
+    "@glsp/theia-debug-diagram": "0.1.0",
     "@theia/core": "1.0.0",
     "@theia/editor": "1.0.0",
     "@theia/filesystem": "1.0.0",

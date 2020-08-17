@@ -15,7 +15,7 @@
     "@theia/process": "1.0.0",
     "@theia/terminal": "1.0.0",
     "@theia/workspace": "1.0.0",
-    "@eclipse-glsp-examples/workflow-theia": "C:/Users/Public/eclipse-glsp/glsp-examples/client/workflow/workflow-theia"
+    "@eclipse-glsp-examples/workflow-theia": "0.7.1"
   },
   "devDependencies": {
     "@theia/cli": "1.0.0"
