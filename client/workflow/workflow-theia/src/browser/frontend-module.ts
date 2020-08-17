@@ -22,9 +22,11 @@ import {
 } from "@eclipse-glsp/theia-integration/lib/browser";
 import { CommandContribution, MenuContribution } from "@theia/core";
 import { KeybindingContext, KeybindingContribution } from "@theia/core/lib/browser";
+import { DebugSessionContribution } from "@theia/debug/lib/browser/debug-session-contribution";
 import { ContainerModule, interfaces } from "inversify";
 import { DiagramConfiguration } from "sprotty-theia";
 
+import { WorkflowDebugSessionContribution } from "./debugger/workflow-debug-session-contribution";
 import { WorkflowDiagramConfiguration } from "./diagram/workflow-diagram-configuration";
 import { WorkflowDiagramManager } from "./diagram/workflow-diagram-manager";
 import { WorkflowDiagramReadonlyViewContribution } from "./diagram/workflow-diagram-readonly-view";
@@ -43,6 +45,7 @@ import {
 } from "./diagram/workflow-task-editing-context-menu";
 import { ExampleNavigationCommandContribution } from "./external-navigation-example/external-navigation-example";
 import { WorkflowGLSPClientContribution } from "./language/workflow-glsp-client-contribution";
+
 
 export default new ContainerModule((bind: interfaces.Bind) => {
     bind(WorkflowGLSPClientContribution).toSelf().inSingletonScope();
@@ -71,4 +74,7 @@ export default new ContainerModule((bind: interfaces.Bind) => {
     bind(WorkflowDiagramReadonlyViewContribution).toSelf().inSingletonScope();
     bind(MenuContribution).toService(WorkflowDiagramReadonlyViewContribution);
     bind(CommandContribution).toService(WorkflowDiagramReadonlyViewContribution);
+
+    // Debugger
+    bind(DebugSessionContribution).to(WorkflowDebugSessionContribution);
 });

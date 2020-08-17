@@ -10,7 +10,7 @@
     "diagram"
   ],
   "dependencies": {
-    "@eclipse-glsp/client": "next",
+    "@eclipse-glsp/client": "C:/Users/Public/eclipse-glsp/glsp-client",
     "balloon-css": "^0.5.0"
   },
   "devDependencies": {

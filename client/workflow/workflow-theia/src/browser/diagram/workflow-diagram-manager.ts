@@ -18,6 +18,8 @@ import {
     GLSPNotificationManager,
     GLSPTheiaSprottyConnector
 } from "@eclipse-glsp/theia-integration/lib/browser";
+import { GLSPBreakpointManager } from "@glsp/theia-debug-diagram/lib/browser/breakpoint/glsp-breakpoint-manager";
+import { DebugGLSPEditorManager } from "@glsp/theia-debug-diagram/lib/browser/debug-glsp-editor-manager";
 import { MessageService } from "@theia/core";
 import { WidgetManager } from "@theia/core/lib/browser";
 import { EditorManager } from "@theia/editor/lib/browser";
@@ -36,17 +38,20 @@ export class WorkflowDiagramManager extends GLSPDiagramManager {
     private _diagramConnector: GLSPTheiaSprottyConnector;
 
     constructor(
+        @inject(DebugGLSPEditorManager) debugGLSPEditorManager: DebugGLSPEditorManager,
         @inject(WorkflowGLSPDiagramClient) diagramClient: WorkflowGLSPDiagramClient,
         @inject(TheiaFileSaver) fileSaver: TheiaFileSaver,
         @inject(WidgetManager) widgetManager: WidgetManager,
         @inject(EditorManager) editorManager: EditorManager,
         @inject(MessageService) messageService: MessageService,
-        @inject(GLSPNotificationManager) notificationManager: GLSPNotificationManager) {
+        @inject(GLSPNotificationManager) notificationManager: GLSPNotificationManager,
+        @inject(GLSPBreakpointManager) breakpointManager: GLSPBreakpointManager) {
         super();
         this._diagramConnector = new GLSPTheiaSprottyConnector({
             diagramClient, fileSaver, editorManager, widgetManager, diagramManager: this,
-            messageService, notificationManager
+            messageService, notificationManager, breakpointManager
         });
+        debugGLSPEditorManager.diagramManager = this;
     }
 
     get fileExtensions() {

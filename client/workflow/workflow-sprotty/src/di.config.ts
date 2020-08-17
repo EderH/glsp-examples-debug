@@ -19,13 +19,13 @@ import "sprotty/css/edit-label.css";
 
 import {
     boundsModule,
+    BreakpointContextMenuItemProvider,
     buttonModule,
     configureModelElement,
     ConsoleLogger,
     defaultGLSPModule,
     defaultModule,
     DeleteElementContextMenuItemProvider,
-    DiamondNodeView,
     edgeLayoutModule,
     editLabelFeature,
     executeCommandModule,
@@ -36,6 +36,7 @@ import {
     GLSP_TYPES,
     glspCommandPaletteModule,
     glspContextMenuModule,
+    glspDebugModule,
     glspDecorationModule,
     glspEditLabelModule,
     GLSPGraph,
@@ -64,7 +65,6 @@ import {
     SButton,
     SCompartment,
     SCompartmentView,
-    SEdge,
     SGraphView,
     SLabel,
     SLabelView,
@@ -80,8 +80,15 @@ import {
 import { Container, ContainerModule } from "inversify";
 
 import { directTaskEditor } from "./direct-task-editing/di.config";
-import { ActivityNode, Icon, TaskNode, WeightedEdge } from "./model";
-import { ForkOrJoinNodeView, IconView, TaskNodeView, WeightedEdgeView, WorkflowEdgeView } from "./workflow-views";
+import { ActivityNode, GLSPEdge, Icon, TaskNode, WeightedEdge } from "./model";
+import {
+    DecisionOrMergeNodeView,
+    ForkOrJoinNodeView,
+    IconView,
+    TaskNodeView,
+    WeightedEdgeView,
+    WorkflowEdgeView
+} from "./workflow-views";
 
 const workflowDiagramModule = new ContainerModule((bind, unbind, isBound, rebind) => {
     rebind(TYPES.ILogger).to(ConsoleLogger).inSingletonScope();
@@ -90,6 +97,7 @@ const workflowDiagramModule = new ContainerModule((bind, unbind, isBound, rebind
     bind(TYPES.ISnapper).to(GridSnapper);
     bind(TYPES.ICommandPaletteActionProvider).to(RevealNamedElementActionProvider);
     bind(TYPES.IContextMenuItemProvider).to(DeleteElementContextMenuItemProvider);
+    bind(GLSP_TYPES.IContextMenuProvider).to(BreakpointContextMenuItemProvider);
     const context = { bind, unbind, isBound, rebind };
     configureModelElement(context, 'graph', GLSPGraph, SGraphView);
     configureModelElement(context, 'task:automated', TaskNode, TaskNodeView);
@@ -103,11 +111,11 @@ const workflowDiagramModule = new ContainerModule((bind, unbind, isBound, rebind
     configureModelElement(context, 'button:expand', SButton, ExpandButtonView);
     configureModelElement(context, 'routing-point', SRoutingHandle, SRoutingHandleView);
     configureModelElement(context, 'volatile-routing-point', SRoutingHandle, SRoutingHandleView);
-    configureModelElement(context, 'edge', SEdge, WorkflowEdgeView);
+    configureModelElement(context, 'edge', GLSPEdge, WorkflowEdgeView);
     configureModelElement(context, 'edge:weighted', WeightedEdge, WeightedEdgeView);
     configureModelElement(context, 'icon', Icon, IconView);
-    configureModelElement(context, 'activityNode:merge', ActivityNode, DiamondNodeView);
-    configureModelElement(context, 'activityNode:decision', ActivityNode, DiamondNodeView);
+    configureModelElement(context, 'activityNode:merge', ActivityNode, DecisionOrMergeNodeView);
+    configureModelElement(context, 'activityNode:decision', ActivityNode, DecisionOrMergeNodeView);
     configureModelElement(context, 'activityNode:fork', ActivityNode, ForkOrJoinNodeView);
     configureModelElement(context, 'activityNode:join', ActivityNode, ForkOrJoinNodeView);
 });
@@ -119,7 +127,7 @@ export default function createContainer(widgetId: string): Container {
         glspHoverModule, fadeModule, exportModule, expandModule, openModule, buttonModule, modelSourceModule, labelEditUiModule, glspEditLabelModule,
         workflowDiagramModule, executeCommandModule, toolFeedbackModule, modelHintsModule, glspContextMenuModule, glspServerCopyPasteModule,
         glspCommandPaletteModule, paletteModule, routingModule, glspDecorationModule, edgeLayoutModule, zorderModule,
-        layoutCommandsModule, directTaskEditor, navigationModule, markerNavigatorModule);
+        layoutCommandsModule, directTaskEditor, navigationModule, markerNavigatorModule, glspDebugModule);
 
     overrideViewerOptions(container, {
         baseDiv: widgetId,

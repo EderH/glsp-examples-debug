@@ -16,6 +16,7 @@
 
 .sprotty-graph {
     font-size: 15pt;
+    background: rgb(179, 196, 202);
     border: none;
     height: 100%;
 }
@@ -30,6 +31,8 @@
 }
 
 .sprotty-node {
+    fill: #cdc;
+    stroke: rgb(0, 0, 0);
     stroke-width: 0;
     font-weight: bold;
 }
@@ -72,11 +75,22 @@
 
 .sprotty-edge {
     fill: none;
+    stroke: black;
     stroke-width: 2px;
 }
 
+.sprotty-edge.arrow {
+    fill: black;
+}
+
 .sprotty-edge.selected {
+    stroke: #844;
     stroke-width: 4px;
+}
+
+.sprotty-edge.current {
+    stroke-width: 5px;
+    stroke: rgb(0, 255, 0) !important;
 }
 
 .sprotty-edge.mouseover:not(.selected) {
@@ -111,8 +125,9 @@
     text-anchor: middle;
 }
 
-.sprotty-node:not(.selected) {
+.sprotty-node.task {
     stroke-width: 1px;
+    stroke: black;
 }
 
 .sprotty-node.task.automated {
@@ -121,6 +136,19 @@
 
 .sprotty-node.task.manual {
     fill: lightblue;
+}
+
+.sprotty-node.forkOrJoin {
+    fill: black;
+}
+
+.sprotty-node.forkOrJoin.selected {
+    stroke: rgb(87, 87, 214);
+}
+
+.sprotty-node.forkOrJoin.current {
+    stroke-width: 5;
+    stroke: rgb(0, 255, 0) !important;
 }
 
 text {
@@ -158,11 +186,18 @@ text {
 
 polygon.sprotty-node {
     fill: white;
+    stroke: black;
     stroke-width: 1pt;
 }
 
 .sprotty-node.selected {
-    stroke-width: 4;
+    stroke-width: 5;
+    stroke: rgb(87, 87, 214);
+}
+
+.sprotty-node.current {
+    stroke-width: 5;
+    stroke: rgb(0, 255, 0) !important;
 }
 
 svg {
@@ -176,23 +211,17 @@ svg {
     margin-left: -5px;
 }
 
-g .movement-not-allowed>.sprotty-node {
-    stroke: var(--glsp-error-foreground)!important;
+.sprotty-node.breakpoint {
+    stroke-width: 5;
+    stroke: rgb(255, 0, 0);
 }
 
-.sprotty-resize-handle.movement-not-allowed {
-    stroke: var(--glsp-error-foreground)!important;
-    fill: var(--glsp-error-foreground)!important;
+.sprotty-edge.breakpoint {
+    stroke-width: 5;
+    stroke: rgb(255, 0, 0);
 }
 
-.error>.sprotty-node {
-    stroke: var(--glsp-error-foreground)!important;
-}
-
-.warning>.sprotty-node {
-    stroke: var(--glsp-warning-foreground)!important;
-}
-
-.info>.sprotty-node {
-    stroke: var(--glsp-info-foreground)!important;
+.sprotty-edge.breakpoint .arrow {
+    stroke-width: 5;
+    stroke: rgb(255, 0, 0);
 }

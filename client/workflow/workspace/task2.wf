@@ -1,0 +1,504 @@
+{
+  "id": "task2",
+  "children": [
+    {
+      "name": "Move",
+      "duration": 20,
+      "taskType": "manual",
+      "id": "task9",
+      "children": [
+        {
+          "id": "move1_header",
+          "children": [
+            {
+              "commandId": "simulate-command",
+              "id": "move1_icon",
+              "children": [
+                {
+                  "id": "move1_ticon",
+                  "type": "label:icon",
+                  "position": {
+                    "x": 7.65625,
+                    "y": 4.796875
+                  },
+                  "size": {
+                    "width": 16.6875,
+                    "height": 22.40625
+                  },
+                  "text": "M",
+                  "alignment": {
+                    "x": 8.34375,
+                    "y": 18.40625
+                  }
+                }
+              ],
+              "type": "icon",
+              "position": {
+                "x": 5.0,
+                "y": 5.0
+              },
+              "size": {
+                "width": 32.0,
+                "height": 32.0
+              },
+              "layout": "stack",
+              "layoutOptions": {
+                "resizeContainer": false,
+                "hAlign": "center"
+              }
+            },
+            {
+              "id": "move1_classname",
+              "type": "label:heading",
+              "position": {
+                "x": 38.0,
+                "y": 9.796875
+              },
+              "size": {
+                "width": 48.90625,
+                "height": 22.40625
+              },
+              "text": "Push",
+              "alignment": {
+                "x": 24.453125,
+                "y": 18.40625
+              }
+            }
+          ],
+          "type": "comp:header",
+          "position": {
+            "x": 5.0,
+            "y": 5.0
+          },
+          "size": {
+            "width": 91.90625,
+            "height": 42.0
+          },
+          "layout": "hbox"
+        }
+      ],
+      "type": "task:manual",
+      "position": {
+        "x": 26.48721270700129,
+        "y": 197.7025574585998
+      },
+      "size": {
+        "width": 101.90625,
+        "height": 52.0
+      },
+      "layout": "vbox"
+    },
+    {
+      "name": "Rotate",
+      "duration": 10,
+      "taskType": "automated",
+      "reference": "ControlUnit",
+      "id": "rotate1",
+      "children": [
+        {
+          "id": "rotate1_header",
+          "children": [
+            {
+              "commandId": "simulate-command",
+              "id": "rotate1_icon",
+              "children": [
+                {
+                  "id": "rotate1_ticon",
+                  "type": "label:icon",
+                  "position": {
+                    "x": 8.7890625,
+                    "y": 4.796875
+                  },
+                  "size": {
+                    "width": 14.421875,
+                    "height": 22.40625
+                  },
+                  "text": "A",
+                  "alignment": {
+                    "x": 7.484375,
+                    "y": 18.40625
+                  }
+                }
+              ],
+              "type": "icon",
+              "position": {
+                "x": 5.0,
+                "y": 5.0
+              },
+              "size": {
+                "width": 32.0,
+                "height": 32.0
+              },
+              "layout": "stack",
+              "layoutOptions": {
+                "resizeContainer": false,
+                "hAlign": "center"
+              }
+            },
+            {
+              "id": "rotate1_classname",
+              "type": "label:heading",
+              "position": {
+                "x": 38.0,
+                "y": 9.796875
+              },
+              "size": {
+                "width": 63.875,
+                "height": 22.40625
+              },
+              "text": "ChkWt",
+              "alignment": {
+                "x": 31.671875,
+                "y": 18.40625
+              }
+            }
+          ],
+          "type": "comp:header",
+          "position": {
+            "x": 5.0,
+            "y": 5.0
+          },
+          "size": {
+            "width": 106.875,
+            "height": 42.0
+          },
+          "layout": "hbox"
+        }
+      ],
+      "type": "task:automated",
+      "position": {
+        "x": 200.0,
+        "y": 200.0
+      },
+      "size": {
+        "width": 116.875,
+        "height": 52.0
+      },
+      "layout": "vbox"
+    },
+    {
+      "name": "Light",
+      "duration": 200,
+      "taskType": "manual",
+      "id": "light1",
+      "children": [
+        {
+          "id": "light1_header",
+          "children": [
+            {
+              "commandId": "simulate-command",
+              "id": "light1_icon",
+              "children": [
+                {
+                  "id": "light1_ticon",
+                  "type": "label:icon",
+                  "position": {
+                    "x": 7.65625,
+                    "y": 4.796875
+                  },
+                  "size": {
+                    "width": 16.6875,
+                    "height": 22.40625
+                  },
+                  "text": "M",
+                  "alignment": {
+                    "x": 8.34375,
+                    "y": 18.40625
+                  }
+                }
+              ],
+              "type": "icon",
+              "position": {
+                "x": 5.0,
+                "y": 5.0
+              },
+              "size": {
+                "width": 32.0,
+                "height": 32.0
+              },
+              "layout": "stack",
+              "layoutOptions": {
+                "resizeContainer": false,
+                "hAlign": "center"
+              }
+            },
+            {
+              "id": "light1_classname",
+              "type": "label:heading",
+              "position": {
+                "x": 38.0,
+                "y": 9.796875
+              },
+              "size": {
+                "width": 52.75,
+                "height": 22.40625
+              },
+              "text": "RflWt",
+              "alignment": {
+                "x": 26.109375,
+                "y": 18.40625
+              }
+            }
+          ],
+          "type": "comp:header",
+          "position": {
+            "x": 5.0,
+            "y": 5.0
+          },
+          "size": {
+            "width": 95.75,
+            "height": 42.0
+          },
+          "layout": "hbox"
+        }
+      ],
+      "type": "task:manual",
+      "position": {
+        "x": 400.0,
+        "y": 150.0
+      },
+      "size": {
+        "width": 105.75,
+        "height": 52.0
+      },
+      "layout": "vbox"
+    },
+    {
+      "name": "Wait",
+      "duration": 20,
+      "taskType": "automated",
+      "reference": "WaterTank",
+      "id": "task11",
+      "children": [
+        {
+          "id": "wait1_header",
+          "children": [
+            {
+              "commandId": "simulate-command",
+              "id": "wait1_icon",
+              "children": [
+                {
+                  "id": "wait1_ticon",
+                  "type": "label:icon",
+                  "position": {
+                    "x": 8.7890625,
+                    "y": 4.796875
+                  },
+                  "size": {
+                    "width": 14.421875,
+                    "height": 22.40625
+                  },
+                  "text": "A",
+                  "alignment": {
+                    "x": 7.484375,
+                    "y": 18.40625
+                  }
+                }
+              ],
+              "type": "icon",
+              "position": {
+                "x": 5.0,
+                "y": 5.0
+              },
+              "size": {
+                "width": 32.0,
+                "height": 32.0
+              },
+              "layout": "stack",
+              "layoutOptions": {
+                "resizeContainer": false,
+                "hAlign": "center"
+              }
+            },
+            {
+              "id": "wait1_classname",
+              "type": "label:heading",
+              "position": {
+                "x": 38.0,
+                "y": 9.796875
+              },
+              "size": {
+                "width": 57.109375,
+                "height": 22.40625
+              },
+              "text": "WtOK",
+              "alignment": {
+                "x": 28.578125,
+                "y": 18.40625
+              }
+            }
+          ],
+          "type": "comp:header",
+          "position": {
+            "x": 5.0,
+            "y": 5.0
+          },
+          "size": {
+            "width": 100.109375,
+            "height": 42.0
+          },
+          "layout": "hbox"
+        }
+      ],
+      "type": "task:manual",
+      "position": {
+        "x": 400.0,
+        "y": 250.0
+      },
+      "size": {
+        "width": 110.109375,
+        "height": 52.0
+      },
+      "layout": "vbox"
+    },
+    {
+      "name": "Repeat",
+      "duration": 100,
+      "taskType": "manual",
+      "reference": "ControlUnit",
+      "id": "repeat1",
+      "children": [
+        {
+          "id": "repeat1_header",
+          "children": [
+            {
+              "commandId": "simulate-command",
+              "id": "repeat1_icon",
+              "children": [
+                {
+                  "id": "repeat1_ticon",
+                  "type": "label:icon",
+                  "position": {
+                    "x": 7.65625,
+                    "y": 4.796875
+                  },
+                  "size": {
+                    "width": 16.6875,
+                    "height": 22.40625
+                  },
+                  "text": "M",
+                  "alignment": {
+                    "x": 8.34375,
+                    "y": 18.40625
+                  }
+                }
+              ],
+              "type": "icon",
+              "position": {
+                "x": 5.0,
+                "y": 5.0
+              },
+              "size": {
+                "width": 32.0,
+                "height": 32.0
+              },
+              "layout": "stack",
+              "layoutOptions": {
+                "resizeContainer": false,
+                "hAlign": "center"
+              }
+            },
+            {
+              "id": "repeat1_classname",
+              "type": "label:heading",
+              "position": {
+                "x": 38.0,
+                "y": 9.796875
+              },
+              "size": {
+                "width": 62.21875,
+                "height": 22.40625
+              },
+              "text": "ChkTp",
+              "alignment": {
+                "x": 31.109375,
+                "y": 18.40625
+              }
+            }
+          ],
+          "type": "comp:header",
+          "position": {
+            "x": 5.0,
+            "y": 5.0
+          },
+          "size": {
+            "width": 105.21875,
+            "height": 42.0
+          },
+          "layout": "hbox"
+        }
+      ],
+      "type": "task:manual",
+      "position": {
+        "x": 613.1897701656013,
+        "y": 208.2436063535006
+      },
+      "size": {
+        "width": 115.21875,
+        "height": 52.0
+      },
+      "layout": "vbox"
+    },
+    {
+      "nodeType": "decisionNode",
+      "id": "activityNode9",
+      "type": "activityNode:decision",
+      "position": {
+        "x": 350.0,
+        "y": 216.0
+      }
+    },
+    {
+      "nodeType": "mergeNode",
+      "id": "activityNode10",
+      "type": "activityNode:merge",
+      "position": {
+        "x": 550.0,
+        "y": 216.0
+      }
+    },
+    {
+      "id": "edge2",
+      "type": "edge",
+      "sourceId": "rotate1",
+      "targetId": "activityNode9"
+    },
+    {
+      "id": "edge3",
+      "type": "edge:weighted",
+      "sourceId": "activityNode9",
+      "targetId": "light1"
+    },
+    {
+      "id": "edge5",
+      "type": "edge",
+      "sourceId": "light1",
+      "targetId": "activityNode10"
+    },
+    {
+      "id": "edge7",
+      "type": "edge",
+      "sourceId": "activityNode10",
+      "targetId": "repeat1"
+    },
+    {
+      "id": "cf2a5b36-775c-4c1e-8209-2944746c4b3d",
+      "type": "edge",
+      "sourceId": "task9",
+      "targetId": "rotate1"
+    },
+    {
+      "id": "a6079eda-1f6f-4961-a833-b4da54d59e54",
+      "type": "edge",
+      "sourceId": "task11",
+      "targetId": "activityNode10"
+    },
+    {
+      "id": "941644c3-de0f-43e4-a401-3da3290bbd5f",
+      "type": "edge:weighted",
+      "sourceId": "activityNode9",
+      "targetId": "task11"
+    }
+  ],
+  "type": "graph"
+}

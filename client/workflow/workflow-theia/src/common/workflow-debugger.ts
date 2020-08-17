@@ -13,15 +13,7 @@
  *
  * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
  ********************************************************************************/
-import { DebugAdapterContribution } from "@theia/debug/lib/common/debug-model";
-import { LanguageServerContribution } from "@theia/languages/lib/node";
-import { ContainerModule } from "inversify";
-
-import { WorkflowDebugAdapterContribution } from "./workflow-debug-configuration-provider";
-import { WorkflowGLServerContribution } from "./workflow-glsp-server-contribution";
-
-
-export default new ContainerModule(bind => {
-    bind(LanguageServerContribution).to(WorkflowGLServerContribution).inSingletonScope();
-    bind(DebugAdapterContribution).to(WorkflowDebugAdapterContribution).inSingletonScope();
-});
+export namespace WorkflowDebugger {
+    export const DebugType: string = "workflow-debug";
+    export const PackageName: string = "theia-workflow-debug";
+}

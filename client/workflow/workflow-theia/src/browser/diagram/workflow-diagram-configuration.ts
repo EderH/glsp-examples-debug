@@ -18,7 +18,7 @@ import "sprotty-theia/css/theia-sprotty.css";
 import { createWorkflowDiagramContainer } from "@eclipse-glsp-examples/workflow-sprotty/lib";
 import { CommandPalette, TYPES } from "@eclipse-glsp/client";
 import { ExternalNavigateToTargetHandler } from "@eclipse-glsp/client/lib";
-import { TheiaCommandPalette } from "@eclipse-glsp/theia-integration/lib/browser";
+import { TheiaCommandPalette, TheiaContextMenuService } from "@eclipse-glsp/theia-integration/lib/browser";
 import {
     connectTheiaContextMenuService,
     TheiaContextMenuServiceFactory
@@ -32,7 +32,6 @@ import { TheiaNavigateToTargetHandler } from "@eclipse-glsp/theia-integration/li
 import { SelectionService } from "@theia/core";
 import { Container, inject, injectable } from "inversify";
 import { DiagramConfiguration, TheiaDiagramServer, TheiaSprottySelectionForwarder } from "sprotty-theia";
-import { TheiaContextMenuService } from "sprotty-theia/lib/sprotty/theia-sprotty-context-menu-service";
 
 import { WorkflowLanguage } from "../../common/workflow-language";
 import { WorkflowDiagramServer } from "./workflow-diagram-server";

@@ -16,6 +16,7 @@
 import {
     Bounds,
     boundsFeature,
+    breakpointFeature,
     CommandExecutor,
     connectableFeature,
     deletableFeature,
@@ -36,6 +37,7 @@ import {
     selectFeature,
     SModelElement,
     SShapeElement,
+    stackFrameFeature,
     WithEditableLabel,
     withEditLabelFeature
 } from "@eclipse-glsp/client";
@@ -44,11 +46,14 @@ import { ActivityNodeSchema } from "./model-schema";
 
 export class TaskNode extends RectangularNode implements Nameable, WithEditableLabel {
     static readonly DEFAULT_FEATURES = [connectableFeature, deletableFeature, selectFeature, boundsFeature,
-        moveFeature, layoutContainerFeature, fadeFeature, hoverFeedbackFeature, popupFeature, nameFeature, withEditLabelFeature];
+        moveFeature, layoutContainerFeature, fadeFeature, hoverFeedbackFeature, popupFeature, nameFeature, withEditLabelFeature,
+        stackFrameFeature, breakpointFeature];
     name: string = "";
     duration?: number;
     taskType?: string;
     reference?: string;
+    current: boolean = false;
+    breakpoint: boolean = false;
 
     get editableLabel() {
         const headerComp = this.children.find(element => element.type === 'comp:header');
@@ -66,12 +71,23 @@ export function isTaskNode(element: SModelElement): element is TaskNode {
     return element instanceof TaskNode || false;
 }
 
-export class WeightedEdge extends SEdge {
+export class GLSPEdge extends SEdge {
+    static readonly DEFAULT_FEATURES = [deletableFeature, selectFeature, fadeFeature,
+        hoverFeedbackFeature, stackFrameFeature, breakpointFeature];
+    current: boolean = false;
+    breakpoint: boolean = false;
+}
+
+export class WeightedEdge extends GLSPEdge {
     probability?: string;
 }
 
 export class ActivityNode extends DiamondNode {
+    static readonly DEFAULT_FEATURES = [connectableFeature, deletableFeature, selectFeature, boundsFeature,
+        moveFeature, layoutContainerFeature, fadeFeature, hoverFeedbackFeature, popupFeature, stackFrameFeature, breakpointFeature];
     nodeType: string = ActivityNodeSchema.Type.UNDEFINED;
+    current: boolean = false;
+    breakpoint: boolean = false;
     size = {
         width: 32,
         height: 32

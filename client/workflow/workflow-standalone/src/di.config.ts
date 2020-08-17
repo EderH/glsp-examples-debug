@@ -20,6 +20,7 @@ import { GLSPWebsocketDiagramServer } from "@eclipse-glsp/client";
 import { Container } from "inversify";
 import { ConsoleLogger, LogLevel, TYPES } from "sprotty";
 
+
 export default function createContainer(): Container {
     const container = createWorkflowDiagramContainer('sprotty');
     container.bind(TYPES.ModelSource).to(GLSPWebsocketDiagramServer).inSingletonScope();

@@ -4,8 +4,8 @@
   "version": "0.7.0",
   "description": "Standalone browser-app for the Workflow example",
   "dependencies": {
-    "@eclipse-glsp-examples/workflow-sprotty": "next",
-    "@eclipse-glsp/client": "next",
+    "@eclipse-glsp-examples/workflow-sprotty": "../client/workflow/workflow-sprotty",
+    "@eclipse-glsp/client": "C:/Users/Public/eclipse-glsp/glsp-client",
     "reconnecting-websocket": "^4.1.10"
   },
   "devDependencies": {

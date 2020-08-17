@@ -1,0 +1,14 @@
+{
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "workflow-debug",
+        "request": "launch",
+        "name": "Debugging a text file",
+        "stopOnEntry": true,
+        "program": "C:/Users/Public/eclipse-glsp/glsp-examples/client/workflow/workspace/example1.wf"
+      }
+    ]
+  }
+}
